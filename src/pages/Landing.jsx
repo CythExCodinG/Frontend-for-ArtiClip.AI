@@ -1,31 +1,216 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import GradientText from '../components/GradientText/GradientText'
+import { useGSAP } from '@gsap/react'
+import { SplitText } from "gsap/SplitText";
+import { features } from '../constants/index'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { scale } from 'motion';
+gsap.registerPlugin(SplitText, ScrollTrigger)
 const Landing = () => {
-  const isMobile = window.innerWidth < 768;
+  useGSAP(() => {
+
+    const split = new SplitText(".hero-text", { type: "chars" });
+
+    split.chars.forEach(char => {
+      char.classList.add("gradient-text");
+      char.style.fontFamily = '"Spicy Rice", sans-serif';
+    });
+
+    gsap.from(split.chars, {
+      yPercent: 100,
+      opacity: 0,
+      stagger: 0.05,
+      ease: "power3.out",
+    })
+    gsap.to('.hero-title', {
+      scrollTrigger: {
+        trigger: '.hero-title',
+        start: 'top 10%',
+        end: 'bottom 20%',
+        scrub: true,
+        pin: true
+      },
+      opacity: 0,
+      scale: 0.5,
+
+    })
+    gsap.fromTo('.hero-img', {
+      scrollTrigger: {
+        trigger: '.hero-img',
+        start: 'top 80%',
+        end: 'bottom 80%',
+        once: true,
+        toggleActions: 'play none none reverse'
+      },
+      scale: 0,
+      opacity: 0,
+    }, {
+      scale: 1,
+      opacity: 1,
+      duration: 0.5,
+      ease: 'expo.inOut',
+      delay: 1
+    });
+
+
+    gsap.from(".feature-sec", {
+      scrollTrigger: {
+        trigger: ".feature-sec",
+        start: "top 60%",
+        toggleActions: "play reset play reset"
+      },
+      x: -80,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+
+    });
+    gsap.to('.why-grid', {
+      scrollTrigger: {
+        trigger: '.why-grid',
+        toggleActions: 'play none none reverse',
+        start: 'top 10%',
+        end: 'bottom 10%',
+        scrub: true
+      },
+      stagger: 0.5,
+      yPercent: 100,
+      opacity: 0
+    })
+
+    gsap.from(".use-cases", {
+      scrollTrigger: {
+        trigger: ".use-cases",
+        start: "top 80%",
+        toggleActions: "play reset play reset"
+      },
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    });
+    gsap.from(".use-cards", {
+      scrollTrigger: {
+        trigger: ".use-cases",
+        start: "top 70%",
+        toggleActions: "play reset play reset"
+      },
+      stagger: 0.2,
+      x: -100,
+      opacity: 0,
+      duration: 1,
+      ease: "power3.out",
+    });
+
+
+
+    return () => {
+      split.revert();
+      ScrollTrigger.getAll().forEach(st => st.kill());
+    };
+  }, []);
+
+
   return (
     <>
-      <div className='w-full min-h-screen bg-zinc-900 flex justify-center relative'>
-        <div className='wrapper w-[96%] bg-zinc-800 md:m-10 m-5 z-0 rounded-xl '>
-          <div className={isMobile ? 'top-0 z-10' : 'sticky top-0 z-10 w-full md:flex md:justify-center'}>
-            {isMobile ? "" : <Navbar />}
+      <section className="hero-bg h-screen md:mt-10 flex items-center justify-center text-center">
+        <Navbar />
+        <div className="hero-title section-padding mt-20">
+          <h1 className="hero-text text-5xl md:text-[8rem] lg:text-[10rem] font-bold leading-tight gradient-text">
+            Too Long? <br /> We Summarize It
+          </h1>
+
+          <p className="mt-6 text-gray-400 text-lg">
+            Paste articles or links and get clean AI-powered summaries in seconds.
+          </p>
+
+          <div className="mt-10 flex justify-center gap-4">
+            <button className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition" onClick={() => window.location.href = '/postgenerator'}>
+              Try Free
+            </button>
+            <button className="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/5 transition">
+              Learn More
+            </button>
           </div>
-          <div className='w-full flex flex-col lg:flex lg:flex-row lg:justify-center items-center relative h-[60vh] mt-15 overflow-hidden'>
-            <div className='heroimg hidden md:block md:absolute left-[10%] z-20 '>
-              <img src="../src/assets/robot_hero.webp" alt="" className='h-full w-[60%]' />
-            </div>
-            <div className='lg:w-1/2 lg:text-[6rem] text-center md:tracking-tight tracking-normal w-full md:text-[3em] text-[2.2em] z-10 relative z-10'><GradientText
-              colors={["#8b40eeff", "#ffb340ff", "#8b40eeff", "#4079ff", "#8b40eeff"]}
-              animationSpeed={6}
-              showBorder={false}
-              className="custom-class"
+        </div>
+      </section>
+      <section id='feature' className="feature-sec section-padding py-24">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          Why Articlip?
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {features.map((f, i) => (
+            <div
+              key={i}
+              className="why-grid p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition"
             >
-              AI that Condenses Knowledge within Seconds
-            </GradientText>
+              <h3 className="text-xl font-semibold mb-3">{f.title}</h3>
+              <p className="text-gray-400">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="use-cases section-padding py-24">
+        <div className=" max-w-6xl mx-auto">
+          {/* Heading */}
+          <div className="use-cards text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Summarize Anything, Anywhere
+            </h2>
+            <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+              Built for students, professionals, and curious minds who value time.
+            </p>
+          </div>
+
+          <div className="use-cards grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="md:col-span-2 p-8 rounded-3xl bg-gradient-to-br from-blue-600/20 to-purple-600/10 border border-white/10">
+              <h3 className="text-2xl font-semibold mb-3">
+                Research & Articles
+              </h3>
+              <p className="text-gray-300 max-w-lg">
+                Convert long research papers and articles into clean summaries
+                without missing key insights.
+              </p>
+            </div>
+
+            <div className="use-cards p-8 rounded-3xl bg-white/5 border border-white/10">
+              <h3 className="text-xl font-semibold mb-3">
+                Blogs & News
+              </h3>
+              <p className="text-gray-400">
+                Stay updated without reading lengthy posts.
+              </p>
+            </div>
+
+            <div className="use-cards p-8 rounded-3xl bg-white/5 border border-white/10">
+              <h3 className="text-xl font-semibold mb-3">
+                Students
+              </h3>
+              <p className="text-gray-400">
+                Perfect for exam prep, notes, and fast revision.
+              </p>
+            </div>
+
+            <div className="use-cards md:col-span-2 p-8 rounded-3xl bg-white/5 border border-white/10">
+              <h3 className="text-2xl font-semibold mb-3">
+                Professionals
+              </h3>
+              <p className="text-gray-400 max-w-lg">
+                Save hours summarizing reports, documents, and emails.
+              </p>
+            </div>
+            <div className="hero-img md:col-span-3 p-8 rounded-3xl bg-white/5 border border-white/10">
+              <img src="/Images/bento4.jpg" alt="" className="w-full h-[300px] md:h-[400px] object-cover rounded-2xl" />
             </div>
           </div>
         </div>
-      </div>
+      </section>
+      <section className='w-full h-screen bg-red-500'>
+
+      </section>
     </>
   )
 }
