@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { navitems, features } from "../constants/index";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-const Navbar = () => {
+const Navbar = ({ navItems }) => {
 
   const [open, setOpen] = useState(false);
   useGSAP(() => {
@@ -28,16 +27,26 @@ const Navbar = () => {
               Articlip<span className="text-blue-500">.Ai</span>
             </div>
 
-            <div className="hidden md:flex space-x-8 text-lg">
-              {navitems.map((item) => (
+            <div className="hidden md:flex space-x-8 text-lg items-center">
+              {navItems.map((item, index) => (
                 <a
-                  key={item.label}
+                  key={index}
                   href={item.link}
-                  className="hover:text-blue-400 transition"
+                  onClick={item.onClick}
+                  className="hover:text-blue-400 transition cursor-pointer"
                 >
                   {item.label}
                 </a>
               ))}
+              {/* User Display */}
+              {(() => {
+                const user = JSON.parse(localStorage.getItem("user"));
+                return user ? (
+                  <div className="px-4 py-1 rounded-full bg-blue-600/20 border border-blue-500/50 text-blue-400 text-sm font-semibold">
+                    👋 Hi, {user.firstname || user.username}
+                  </div>
+                ) : null;
+              })()}
             </div>
 
             <button
@@ -73,12 +82,15 @@ const Navbar = () => {
         {open && (
           <div className="md:hidden bg-[#0b0b0b] border-t border-white/10 flex w-full">
             <div className="nav-item w-full flex flex-col space-y-4 px-6 py-4 text-xl">
-              {navitems.map((item) => (
+              {navItems.map((item, index) => (
                 <a
-                  key={item}
+                  key={index}
                   href={item.link}
-                  className="hover:text-blue-400 transition mobile-link"
-                  onClick={() => setOpen(false)}
+                  className="hover:text-blue-400 transition mobile-link cursor-pointer"
+                  onClick={() => {
+                    setOpen(false);
+                    if (item.onClick) item.onClick();
+                  }}
                 >
                   {item.label}
                 </a>

@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PostGeneration = () => {
+  const navigate = useNavigate();
   const [mode, setMode] = useState("link"); // link | article | custom
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
@@ -34,7 +36,7 @@ const PostGeneration = () => {
         return;
       }
 
-      setResult(data.post); // 👈 AI generated post
+      navigate("/showpost", { state: { post: data.post } });
 
     } catch (err) {
       console.error(err);

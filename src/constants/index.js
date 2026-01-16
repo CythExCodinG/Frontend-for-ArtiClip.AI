@@ -1,8 +1,15 @@
-const navitems = [
+const landingNavItems = [
   { label: "Home", link: "#home" },
   { label: "Features", link: "#feature" },
   { label: "Contact", link: "#contact" },
-  { label: "Post Generator", link: "/postgenerator" }
+  { label: "Post Generator", link: "/postgenerator" },
+  { label: "History", link: "/showpost" },
+];
+
+const showPostNavItems = [
+  { label: "Post Generator", link: "/postgenerator" },
+  { label: "Home", link: "/" },
+  { label: "History", link: "/showpost" },
 ];
 
 
@@ -23,6 +30,6 @@ const features = [
 ];
 
 export {
-  navitems, features
+  landingNavItems, showPostNavItems, features
 };
 

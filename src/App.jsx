@@ -3,6 +3,7 @@ import LandingPage from './pages/Landing'
 import ProtectedRoute from './ProtectedRoute'
 import Register from './pages/Register'
 import Login from './pages/Login'
+import ShowPost from './pages/ShowPost'
 import Postgenerator from './pages/Postgenerator'
 const App = () => {
 
@@ -14,6 +15,8 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route element={<ProtectedRoute />}>
           <Route path="/postgenerator" element={<Postgenerator />} />
+          <Route path="/showpost" element={<ShowPost />} />
+
         </Route>
       </Routes>
     </BrowserRouter>

@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import { useGSAP } from '@gsap/react'
 import { SplitText } from "gsap/SplitText";
-import { features } from '../constants/index'
+import { features, landingNavItems } from '../constants/index'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { scale } from 'motion';
@@ -112,10 +112,15 @@ const Landing = () => {
   }, []);
 
 
+  const token = localStorage.getItem("token");
+  const navItems = token
+    ? landingNavItems
+    : [...landingNavItems, { label: "Login", link: "/login" }];
+
   return (
     <>
       <section className="hero-bg h-screen md:mt-10 flex items-center justify-center text-center">
-        <Navbar />
+        <Navbar navItems={navItems} />
         <div className="hero-title section-padding mt-20">
           <h1 className="hero-text text-5xl md:text-[8rem] lg:text-[10rem] font-bold leading-tight gradient-text">
             Too Long? <br /> We Summarize It
