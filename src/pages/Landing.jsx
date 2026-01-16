@@ -128,8 +128,8 @@ const Landing = () => {
     }, {
       scrollTrigger: {
         trigger: ".creators-sec",
-        start: "top 80%",
-        end: "bottom 20%",
+        start: "top 60%",
+        end: "top 40%",
         scrub: 1,
       },
       y: 0,
