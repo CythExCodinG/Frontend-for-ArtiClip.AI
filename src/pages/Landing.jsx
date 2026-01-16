@@ -122,15 +122,18 @@ const Landing = () => {
     });
 
     // Parallax Reveal for Creators
-    gsap.from(".creator-card", {
+    gsap.fromTo(".creator-card", {
+      y: 100,
+      opacity: 0
+    }, {
       scrollTrigger: {
         trigger: ".creators-sec",
         start: "top 80%",
         end: "bottom 20%",
         scrub: 1,
       },
-      y: 100,
-      opacity: 0,
+      y: 0,
+      opacity: 1,
       stagger: 0.3
     });
 
