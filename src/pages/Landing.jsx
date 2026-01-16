@@ -108,8 +108,8 @@ const Landing = () => {
     gsap.from(".how-it-works-card", {
       scrollTrigger: {
         trigger: ".how-it-works",
-        start: "top 70%",
-        toggleActions: "play reset play reset"
+        start: "top 85%",
+        toggleActions: "play none none reverse"
       },
       y: 50,
       opacity: 0,
