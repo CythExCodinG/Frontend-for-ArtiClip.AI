@@ -33,7 +33,7 @@ const ShowPost = () => {
   useEffect(() => {
     const fetchHistory = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/data", {
+        const res = await fetch("https://booklet-ai.onrender.com/api/data", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`
           }
