@@ -33,7 +33,7 @@ const Navbar = ({ navItems }) => {
                   key={index}
                   href={item.link}
                   onClick={item.onClick}
-                  className="hover:text-blue-400 transition cursor-pointer"
+                  className={`hover:text-blue-400 transition cursor-pointer ${item.className || ""}`}
                 >
                   {item.label}
                 </a>
@@ -86,7 +86,7 @@ const Navbar = ({ navItems }) => {
                 <a
                   key={index}
                   href={item.link}
-                  className="hover:text-blue-400 transition mobile-link cursor-pointer"
+                  className={`hover:text-blue-400 transition mobile-link cursor-pointer ${item.className || ""}`}
                   onClick={() => {
                     setOpen(false);
                     if (item.onClick) item.onClick();

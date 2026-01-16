@@ -129,8 +129,22 @@ const Landing = () => {
 
 
   const token = localStorage.getItem("token");
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.location.reload();
+  };
+
   const navItems = token
-    ? landingNavItems
+    ? [
+      ...landingNavItems,
+      {
+        label: "Logout",
+        onClick: handleLogout,
+        className: "px-4 py-1.5 rounded-full bg-red-500/10 text-red-500 border border-red-500/20 hover:bg-red-500/20 text-sm font-semibold ml-4"
+      }
+    ]
     : [...landingNavItems, { label: "Login", link: "/login" }];
 
   return (
@@ -150,7 +164,10 @@ const Landing = () => {
             <button className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition" onClick={() => window.location.href = '/postgenerator'}>
               Try Free
             </button>
-            <button className="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/5 transition">
+            <button
+              onClick={() => document.getElementById('feature').scrollIntoView({ behavior: 'smooth' })}
+              className="px-6 py-3 rounded-xl border border-white/20 hover:bg-white/5 transition"
+            >
               Learn More
             </button>
           </div>
