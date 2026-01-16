@@ -121,6 +121,19 @@ const Landing = () => {
       ease: "power2.out"
     });
 
+    // Parallax Reveal for Creators
+    gsap.from(".creator-card", {
+      scrollTrigger: {
+        trigger: ".creators-sec",
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: 1,
+      },
+      y: 100,
+      opacity: 0,
+      stagger: 0.3
+    });
+
     return () => {
       split.revert();
       ScrollTrigger.getAll().forEach(st => st.kill());
@@ -269,6 +282,83 @@ const Landing = () => {
           </div>
         </div>
       </section>
+
+      <section id="creators" className="creators-sec section-padding py-24 mb-32 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-bold text-center mb-20 gradient-text">
+            Meet the Creators
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {[
+              {
+                name: "Atharva",
+                role: "Backend Architect",
+                desc: "Built the robust backend infrastructure.",
+                link: "https://github.com/Atharvadotenv",
+                color: "from-purple-500/20 via-blue-500/20 to-purple-500/20",
+                img: "/Images/atharva_logo.jpeg"
+              },
+              {
+                name: "Rohit",
+                role: "Frontend & Integration Lead",
+                desc: "Handled frontend, backend connection, and backend contributions.",
+                link: "https://github.com/CythExCodinG",
+                color: "from-blue-500/20 via-cyan-500/20 to-blue-500/20",
+                img: "/Images/rohit_logo.jpeg"
+              }
+            ].map((creator, i) => (
+              <div
+                key={i}
+                className={`creator-card p-1 bg-gradient-to-br ${creator.color} rounded-3xl hover:scale-[1.02] transition-transform duration-500 animate-gradient`}
+                onClick={() => window.open(creator.link, "_blank")}
+              >
+                <div className="bg-slate-900/90 backdrop-blur-xl p-8 rounded-[22px] h-full border border-white/10 flex flex-col items-center text-center cursor-pointer group">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-white/10 to-white/5 mb-6 overflow-hidden border-2 border-white/20 group-hover:border-blue-500/50 transition-colors">
+                    <div className="w-full h-full flex items-center justify-center text-3xl">
+                      <img src={creator.img} alt="" className="w-full h-full object-contain" />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-2">{creator.name}</h3>
+                  <p className="text-blue-400 font-medium mb-4">{creator.role}</p>
+                  <p className="text-gray-400">{creator.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="contact-sec section-padding py-24 border-t border-white/5 bg-black">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">Get in Touch</h2>
+          <p className="text-gray-400 text-lg mb-12">
+            Have questions, feedback, or want to collaborate? Reach out to us!
+          </p>
+
+          <div className="flex flex-col md:flex-row justify-center gap-6">
+            <a
+              href="mailto:cytherohit01@gmail.com"
+              className="px-8 py-4 rounded-xl bg-white text-black font-bold hover:bg-gray-200 transition flex items-center justify-center gap-2"
+            >
+              <span>📩</span> Email Us
+            </a>
+            <a
+              href="https://github.com/CythExCodinG/Frontend-for-ArtiClip.AI"
+              target="_blank"
+              rel="noreferrer"
+              className="px-8 py-4 rounded-xl bg-slate-800 text-white font-bold hover:bg-slate-700 transition border border-white/10 flex items-center justify-center gap-2"
+            >
+              <span>🐙</span> GitHub Repo
+            </a>
+          </div>
+
+          <div className="mt-20 pt-8 border-t border-white/5 text-gray-600 text-sm">
+            © {new Date().getFullYear()} Articlip.Ai. All rights reserved.
+          </div>
+        </div>
+      </section>
+
     </>
   )
 }
