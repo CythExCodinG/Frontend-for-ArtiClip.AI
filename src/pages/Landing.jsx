@@ -134,7 +134,7 @@ const Landing = () => {
       },
       y: 0,
       opacity: 1,
-      stagger: 0.3
+      stagger: 0.1
     });
 
     return () => {
