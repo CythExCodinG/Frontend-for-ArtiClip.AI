@@ -105,6 +105,19 @@ const Landing = () => {
 
 
 
+    gsap.from(".how-it-works-card", {
+      scrollTrigger: {
+        trigger: ".how-it-works",
+        start: "top 70%",
+        toggleActions: "play reset play reset"
+      },
+      y: 50,
+      opacity: 0,
+      stagger: 0.2,
+      duration: 0.8,
+      ease: "power2.out"
+    });
+
     return () => {
       split.revert();
       ScrollTrigger.getAll().forEach(st => st.kill());
@@ -213,8 +226,28 @@ const Landing = () => {
           </div>
         </div>
       </section>
-      <section className='w-full h-screen bg-red-500'>
+      <section className="how-it-works section-padding py-24 bg-gradient-to-t from-slate-950 to-slate-900 border-t border-white/5">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 gradient-text">
+            How It Works
+          </h2>
 
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "1. Paste Link", desc: "Copy any article or PDF URL you want to summarize.", icon: "🔗" },
+              { title: "2. AI Analysis", desc: "Our advanced AI reads and understands the context instantly.", icon: "🧠" },
+              { title: "3. Get Summary", desc: "Read the key points in seconds and save your time.", icon: "✨" }
+            ].map((step, i) => (
+              <div key={i} className="how-it-works-card p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-blue-500/10 cursor-default">
+                <div className="text-5xl mb-6 bg-white/5 w-20 h-20 rounded-full flex items-center justify-center mx-auto shadow-inner border border-white/10">
+                  {step.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-center text-white">{step.title}</h3>
+                <p className="text-gray-400 text-center leading-relaxed">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
     </>
   )
