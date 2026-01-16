@@ -105,14 +105,17 @@ const Landing = () => {
 
 
 
-    gsap.from(".how-it-works-card", {
+    gsap.fromTo(".how-it-works-card", {
+      y: 50,
+      opacity: 0
+    }, {
       scrollTrigger: {
         trigger: ".how-it-works",
         start: "top 85%",
-        toggleActions: "play none none reverse"
+        toggleActions: "play none none none"
       },
-      y: 50,
-      opacity: 0,
+      y: 0,
+      opacity: 1,
       stagger: 0.2,
       duration: 0.8,
       ease: "power2.out"
