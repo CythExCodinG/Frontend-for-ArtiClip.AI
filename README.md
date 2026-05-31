@@ -5,15 +5,19 @@
 ### AI-Powered Content Creation & Management Platform
 
 <img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=600&lines=AI-Powered+Content+Platform;Built+with+React+%2B+Vite;Fast+%7C+Secure+%7C+Scalable;Created+by+Rohit+Bhalekar" />
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=CythExCodinG.Frontend-For-ArtiClip.AI)
 
+![GitHub stars](https://img.shields.io/github/stars/CythExCodinG/Frontend-For-ArtiClip.AI?style=social)
+
+![GitHub forks](https://img.shields.io/github/forks/CythExCodinG/Frontend-For-ArtiClip.AI?style=social)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/CythExCodinG/Frontend-For-ArtiClip.AI)
 <br>
-
 ![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge\&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-Latest-purple?style=for-the-badge\&logo=vite)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge\&logo=javascript)
 ![NodeJS](https://img.shields.io/badge/Node.js-Backend-green?style=for-the-badge\&logo=node.js)
 ![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
-
 </div>
 
 ---
@@ -157,10 +161,4 @@ MCA Student • Full Stack Developer • AI Enthusiast
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C2FF,100:6A11CB&height=120&section=footer"/>
 
 </div>
-![Visitors](https://visitor-badge.laobi.icu/badge?page_id=CythExCodinG.articlip-ai)
 
-![GitHub stars](https://img.shields.io/github/stars/CythExCodinG/articlip-ai?style=social)
-
-![GitHub forks](https://img.shields.io/github/forks/CythExCodinG/articlip-ai?style=social)
-
-![GitHub last commit](https://img.shields.io/github/last-commit/CythExCodinG/articlip-ai)
