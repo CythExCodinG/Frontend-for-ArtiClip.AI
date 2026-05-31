@@ -15,17 +15,6 @@
 </div>
 
 ---
-<br/>
-
-![GitHub stars](https://img.shields.io/github/stars/CythExCodinG/Frontend-For-ArtiClip.AI?style=social)
-
-![GitHub forks](https://img.shields.io/github/forks/CythExCodinG/Frontend-For-ArtiClip.AI?style=social)
-
-![GitHub last commit](https://img.shields.io/github/last-commit/CythExCodinG/Frontend-For-ArtiClip.AI)
-
-<br/>
-
----
 
 ## 🌟 Overview
 
