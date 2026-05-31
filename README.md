@@ -1,41 +1,57 @@
+<div align="center">
+
 # 🚀 ArtiClip AI
 
-ArtiClip AI is an AI-powered content generation platform designed to help users create, manage, and enhance digital content efficiently. The application provides a modern and responsive user interface along with powerful backend services for seamless user experience.
+### AI-Powered Content Creation & Management Platform
 
-## 🌟 Features
+<img src="https://readme-typing-svg.herokuapp.com?font=Poppins&size=24&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=600&lines=AI-Powered+Content+Platform;Built+with+React+%2B+Vite;Fast+%7C+Secure+%7C+Scalable;Created+by+Rohit+Bhalekar" />
+
+<br>
+
+![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge\&logo=react)
+![Vite](https://img.shields.io/badge/Vite-Latest-purple?style=for-the-badge\&logo=vite)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-yellow?style=for-the-badge\&logo=javascript)
+![NodeJS](https://img.shields.io/badge/Node.js-Backend-green?style=for-the-badge\&logo=node.js)
+![License](https://img.shields.io/badge/License-MIT-success?style=for-the-badge)
+
+</div>
+
+---
+
+## 🌟 Overview
+
+ArtiClip AI is an intelligent content generation platform that helps users create, manage, and enhance digital content using AI-powered tools. Built with modern web technologies, it delivers a seamless, fast, and responsive user experience.
+
+---
+
+## ✨ Features
 
 * 🔐 Secure User Authentication
 * 🤖 AI-Powered Content Generation
 * 📁 File Upload & Management
 * 👤 User Profile Management
 * 📊 Interactive Dashboard
-* 📱 Responsive Design
-* ⚡ Fast Performance with React & Vite
-* 🔄 Real-Time Data Handling
+* 📱 Fully Responsive Design
+* ⚡ Lightning Fast Performance
+* 🔄 Real-Time Data Processing
 * ☁️ Cloud-Based Deployment
+
+---
 
 ## 🛠️ Tech Stack
 
-### Frontend
+| Category       | Technologies               |
+| -------------- | -------------------------- |
+| Frontend       | React.js, Vite, JavaScript |
+| Styling        | Tailwind CSS               |
+| Routing        | React Router               |
+| API Calls      | Axios                      |
+| Backend        | Node.js, Express.js        |
+| Database       | MongoDB                    |
+| Authentication | JWT                        |
+| Deployment     | Vercel, Render             |
 
-* React.js
-* Vite
-* JavaScript (ES6+)
-* React Router
-* Tailwind CSS
-* Axios
-
-### Backend
-
-* Node.js
-* Express.js
-* MongoDB
-* JWT Authentication
-
-### Deployment
-
-* Frontend: Vercel
-* Backend: Render
+---
 
 ## 📂 Project Structure
 
@@ -56,32 +72,40 @@ ArtiClip-AI/
 └── README.md
 ```
 
+---
+
 ## ⚙️ Installation
 
-### Clone the Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/your-username/articlip-ai.git
 cd articlip-ai
 ```
 
-### Frontend Setup
+### Install Dependencies
 
 ```bash
 npm install
+```
+
+### Run Development Server
+
+```bash
 npm run dev
 ```
 
-### Backend Setup
+### Start Backend
 
 ```bash
-npm install
 npm start
 ```
 
+---
+
 ## 🔑 Environment Variables
 
-Create a `.env` file in the root directory and add the required environment variables:
+Create a `.env` file:
 
 ```env
 PORT=5000
@@ -89,34 +113,54 @@ MONGODB_URI=your_mongodb_uri
 JWT_SECRET=your_secret_key
 ```
 
-## 🌐 Live Deployment
+---
+
+## 🌐 Live Demo
 
 ### Frontend
 
-https://frontend-for-arti-clip-ai.vercel.app/
+🔗 https://frontend-for-arti-clip-ai.vercel.app/
 
-### Backend
+### Backend API
 
-https://booklet-ai.onrender.com
-
-## 📸 Screenshots
-
-Add screenshots of your application here.
-
-## 🚀 Future Enhancements
-
-* Multi-language support
-* Advanced AI content generation
-* Real-time collaboration
-* Mobile application
-* Analytics & reporting dashboard
-
-## 👨‍💻 Author
-
-**Rohit Dnyandeo Bhalekar**
-
-MCA Student | Full Stack Developer | AI Enthusiast
+🔗 https://booklet-ai.onrender.com
 
 ---
 
-⭐ If you like this project, consider giving it a star on GitHub!
+## 🚀 Future Enhancements
+
+* 🌍 Multi-language Support
+* 🤖 Advanced AI Features
+* 👥 Real-Time Collaboration
+* 📱 Mobile Application
+* 📈 Analytics Dashboard
+* 🔔 Smart Notifications
+
+---
+
+## 👨‍💻 Developer
+
+### Rohit Dnyandeo Bhalekar
+
+MCA Student • Full Stack Developer • AI Enthusiast
+
+<a href="https://github.com/yourusername">
+  <img src="https://img.shields.io/badge/GitHub-Profile-black?style=for-the-badge&logo=github">
+</a>
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project useful, don't forget to star the repository!
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00C2FF,100:6A11CB&height=120&section=footer"/>
+
+</div>
+![Visitors](https://visitor-badge.laobi.icu/badge?page_id=CythExCodinG.articlip-ai)
+
+![GitHub stars](https://img.shields.io/github/stars/CythExCodinG/articlip-ai?style=social)
+
+![GitHub forks](https://img.shields.io/github/forks/CythExCodinG/articlip-ai?style=social)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/CythExCodinG/articlip-ai)
