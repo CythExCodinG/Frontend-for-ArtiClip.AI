@@ -297,19 +297,12 @@ const Landing = () => {
               {
                 name: "Atharva",
                 role: "Backend Architect",
-                desc: "Built the robust backend infrastructure.",
+                desc: "Built the robust backend infrastructure and Modern Animated Frontend.",
                 link: "https://github.com/Atharvadotenv",
                 color: "from-purple-500/20 via-blue-500/20 to-purple-500/20",
                 img: "/Images/atharva_logo.jpeg"
-              },
-              {
-                name: "Rohit",
-                role: "Frontend & Integration Lead",
-                desc: "Handled frontend, backend connection, and backend contributions.",
-                link: "https://github.com/CythExCodinG",
-                color: "from-blue-500/20 via-cyan-500/20 to-blue-500/20",
-                img: "/Images/rohit_logo.jpeg"
               }
+              
             ].map((creator, i) => (
               <div
                 key={i}
